@@ -12,7 +12,7 @@ before_install:
 - sudo chmod 600 id_rsa_travis
 - ssh-agent bash -c 'ssh-add id_rsa_travis; git clone git@github.com:jgillis/restricted.git'
 - sudo apt-get update -qq
-- sudo apt-get install -y gcc g++ gfortran git cmake liblapack-dev swig ipython python-dev python-numpy python-scipy python-matplotlib coinor-libipopt-dev libmetis-edf-dev
+- sudo apt-get install -y gcc g++ gfortran git cmake liblapack-dev swig ipython python-dev python-numpy python-scipy python-matplotlib coinor-libipopt-dev libmetis-edf-dev libmumps-seq-dev
 - pushd restricted && tar -xvf coinhsl.tar.gz && cd coinhsl-2014.01.10 && ./configure --prefix=/home/travis/casadi/casadi/coinhsl-install LIBS=-lmetis-edf && make && make install && cd /home/travis/casadi/casadi/coinhsl-install/lib && ln -s libcoinhsl.so libhsl.so && popd
 install: 
 - mkdir build
