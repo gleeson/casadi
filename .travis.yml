@@ -1,6 +1,7 @@
 env: 
   global: 
     - IPOPT_DEFAULT_LINEAR_SOLVER=ma57
+    - LD_LIBRARY_PATH=/home/travis/casadi/casadi/coinhsl-install/lib
     secure: KvMG4VORV7Ja09shvmsMpiaRMoWqupR76dKxOd7W28I//F4YDIn5ZZefM4aoXsmRgs4G9YqloU8JjVpHutZARmKn2drUwHVMA+96iKb9eDODwZaKXgFYsrQIX5c/OgO8ZpsXynD2daqH3bMK8Mjz1+4fjbFToPFXHggxqQuHm1U=
 compiler: 
 - gcc
@@ -12,7 +13,7 @@ before_install:
 - ssh-agent bash -c 'ssh-add id_rsa_travis; git clone git@github.com:jgillis/restricted.git'
 - sudo apt-get update -qq
 - sudo apt-get install -y gcc g++ gfortran git cmake liblapack-dev swig ipython python-dev python-numpy python-scipy python-matplotlib coinor-libipopt-dev libmetis-edf-dev
-- cd restricted && tar -xvf coinhsl.tar.gz && cd coinhsl-2014.01.10 && ./configure LIBS=-lmetis-edf && make && make install
+- cd restricted && tar -xvf coinhsl.tar.gz && cd coinhsl-2014.01.10 && ./configure --prefix=/home/travis/casadi/casadi/coinhsl-install LIBS=-lmetis-edf && make && make install && /home/travis/casadi/casadi/coinhsl-install/lib && ln -s libcoinhsl.so libhsl.so
 install: 
 - mkdir build
 - cd build
