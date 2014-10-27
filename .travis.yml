@@ -7,8 +7,7 @@ compiler:
 before_install:
 - git clone https://github.com/casadi/testbot.git
 - openssl aes-256-cbc -k "$keypass" -in testbot/id_rsa_travis.enc -out id_rsa_travis -d
-- ssh-add id_rsa_travis
-- git clone git@github.com:jgillis/restricted.git
+- ssh-agent bash -c 'ssh-add id_rsa_travis; git clone git@github.com:jgillis/restricted.git'
 - sudo apt-get update -qq
 - sudo apt-get install -y gcc g++ gfortran git cmake liblapack-dev swig ipython python-dev python-numpy python-scipy python-matplotlib
 install: 
