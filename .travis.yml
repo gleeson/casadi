@@ -24,6 +24,7 @@ python:
 - 2.7_with_system_site_packages
 script: 
 - cd ../test
+- python -c "from casadi.tools import *;loadAllCompiledPlugins()"
 - make unittests_py examples_code_py
 os: 
 - linux
