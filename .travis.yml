@@ -9,7 +9,7 @@ compiler:
 before_install:
 - git clone https://github.com/casadi/testbot.git
 - pushd testbot && recipes/setup.sh && popd
-- testbot/recipes/fetch.sh libhsl.tar.gz && ls -al && head libhsl.tar.gz &&  head && tar -xvf libhsl.tar.gz
+- testbot/recipes/fetch.sh libhsl.tar.gz && tar -xvf libhsl.tar.gz
 - sudo apt-get update -qq
 - sudo apt-get install -y gcc g++ gfortran git cmake liblapack-dev swig ipython python-dev python-numpy python-scipy python-matplotlib coinor-libipopt-dev libmumps-seq-dev libblas-dev liblapack-dev
 install: 
