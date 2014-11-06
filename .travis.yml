@@ -13,7 +13,6 @@ before_install:
 - git clone https://github.com/casadi/testbot.git
 - pushd testbot && recipes/setup.sh && popd
 - testbot/recipes/fetch.sh libhsl.tar.gz && mkdir libhsl && tar -xvf libhsl.tar.gz -C libhsl
-- testbot/restricted/knitro/get_machine_ID
 - pushd testbot/restricted/cplex && mkdir cplex && tar -xvf cplex/cplex12.4.tar.gz -C cplex && mkdir concert && tar -xvf cplex/cplex12.4-concert.tar.gz -C concert && popd
 - sudo apt-get update -qq
 - sudo apt-get install -y gcc g++ gfortran git cmake liblapack-dev swig ipython python-dev python-numpy python-scipy python-matplotlib coinor-libipopt-dev libmumps-seq-dev libblas-dev liblapack-dev
