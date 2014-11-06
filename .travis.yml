@@ -34,7 +34,7 @@ install:
 - readelf -d lib/libcasadi_nlpsolver_worhp.so
 - make python
 - sudo make install install_python
-- ldd /usr/local/lib/casadi/libcasadi_nlpsolver_worhp.so
+- ldd /home/travis/build/casadi/casadi/install/lib/casadi/libcasadi_nlpsolver_worhp.so
 - readelf -d /home/travis/build/casadi/casadi/install/lib/casadi/libcasadi_nlpsolver_worhp.so
 python: 
 - 2.7_with_system_site_packages
