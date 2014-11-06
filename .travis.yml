@@ -30,6 +30,7 @@ install:
 - cmake -DWITH_WORHP=ON   -DWITH_SLICOT=ON  ..
 - make VERBOSE=TRUE
 - sudo make install
+- ldd /usr/local/lib/casadi/libcasadi_nlpsolver_worhp.so
 python: 
 - 2.7_with_system_site_packages
 script: 
