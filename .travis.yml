@@ -8,6 +8,7 @@ env:
     - ILOG_LICENSE_FILE=/home/travis/build/casadi/casadi/testbot/restricted/cplex/access.ilm
     - WORHP=/home/travis/build/casadi/casadi/testbot/restricted/worhp
     - SNOPT=/home/travis/build/casadi/casadi/snopt7
+    - PYTHONPATH=/home/travis/build/casadi/casadi/install
 compiler: 
 - gcc
 - clang
@@ -27,7 +28,7 @@ before_install:
 install: 
 - mkdir build
 - cd build
-- cmake -DWITH_WORHP=ON   -DWITH_SLICOT=ON  ..
+- cmake -DWITH_WORHP=ON   -DWITH_SLICOT=ON -D PYTHON_PREFIX=/home/travis/build/casadi/casadi/install -D CMAKE_INSTALL_PREFIX=/home/travis/build/casadi/casadi/install ..
 - make VERBOSE=TRUE
 - ldd lib/libcasadi_nlpsolver_worhp.so
 - readelf -d lib/libcasadi_nlpsolver_worhp.so
