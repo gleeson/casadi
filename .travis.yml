@@ -7,7 +7,7 @@ env:
     - CMAKE_LIBRARY_PATH=/home/travis/build/casadi/casadi/testbot/restricted/cplex/cplex/lib/x86-64_sles10_4.1/static_pic/:/home/travis/build/casadi/casadi/testbot/restricted/cplex/concert/lib/x86-64_sles10_4.1/static_pic/
     - ILOG_LICENSE_FILE=/home/travis/build/casadi/casadi/testbot/restricted/cplex/access.ilm
     - WORHP=/home/travis/build/casadi/casadi/testbot/restricted/worhp
-    - SNOPT=/home/travis/build/casadi/casadi/testbot/snopt7
+    - SNOPT=/home/travis/build/casadi/casadi/snopt7
 compiler: 
 - gcc
 - clang
