@@ -178,9 +178,10 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 # the RPATH to be used when installing, but only if it's not a system directory
 list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${CMAKE_INSTALL_PREFIX}/lib" isSystemDir)
 message("rpath debug. '${CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES}' , ${CMAKE_INSTALL_PREFIX}/lib: isSystemDir? ${isSystemDir}")
-
+message("was: ${CMAKE_INSTALL_RPATH}")
 if("${isSystemDir}" STREQUAL "-1")
    set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib:${CMAKE_INSTALL_PREFIX}/lib/casadi")
+   message("now: ${CMAKE_INSTALL_RPATH}")
 endif("${isSystemDir}" STREQUAL "-1")
 
 
