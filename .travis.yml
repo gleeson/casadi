@@ -31,7 +31,8 @@ install:
 - make VERBOSE=TRUE
 - ldd lib/libcasadi_nlpsolver_worhp.so
 - readelf -d lib/libcasadi_nlpsolver_worhp.so
-- sudo make install
+- make python
+- sudo make install install_python
 - ldd /usr/local/lib/casadi/libcasadi_nlpsolver_worhp.so
 - readelf -d /usr/local/lib/casadi/libcasadi_nlpsolver_worhp.so
 python: 
