@@ -7,6 +7,7 @@ env:
     - CMAKE_LIBRARY_PATH=/home/travis/build/casadi/casadi/testbot/restricted/cplex/cplex/lib/x86-64_sles10_4.1/static_pic/:/home/travis/build/casadi/casadi/testbot/restricted/cplex/concert/lib/x86-64_sles10_4.1/static_pic/
     - ILOG_LICENSE_FILE=/home/travis/build/casadi/casadi/testbot/restricted/cplex/access.ilm
     - WORHP=/home/travis/build/casadi/casadi/testbot/restricted/worhp
+    - SNOPT=/home/travis/build/casadi/casadi/snopt7
 compiler: 
 - gcc
 - clang
@@ -16,6 +17,7 @@ before_install:
 - pushd testbot && recipes/setup.sh && popd
 - sudo apt-get install p7zip-full -y
 - testbot/recipes/fetch.sh libhsl.tar.gz && mkdir libhsl && tar -xvf libhsl.tar.gz -C libhsl
+- testbot/recipes/fetch.sh snopt7.tar.gz && mkdir snopt7 && tar -xvf snopt7.tar.gz -C snopt7
 - pushd testbot/restricted/cplex && mkdir cplex && tar -xvf cplex12.4.tar.gz -C cplex && mkdir concert && tar -xvf cplex12.4-concert.tar.gz -C concert && popd
 - pushd testbot/restricted && mkdir worhp && cd  worhp && 7za e ../libworhp_debian7_amd64_gcc47_1.6-3.7z && popd
 - sudo add-apt-repository ppa:umn-claoit-rce/compute-packages -y
