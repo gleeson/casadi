@@ -217,3 +217,12 @@
    fun:dlopen@@GLIBC_2.2.5
    fun:_ZN6casadi15PluginInterfaceINS_16QpSolverInternalEE10loadPluginERKSs
 }
+
+{
+  CPLEX weirdness
+  Memcheck:Addr8
+  fun:memcpy@@GLIBC_2.14
+  fun:_intel_fast_memcpy.A
+  ...
+  fun:CPXcopystart
+}
