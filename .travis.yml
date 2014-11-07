@@ -8,9 +8,14 @@ env:
     - ILOG_LICENSE_FILE=/home/travis/build/testbot/restricted/cplex/access.ilm
     - WORHP=/home/travis/build/testbot/restricted/worhp
     - SNOPT=/home/travis/build/snopt7
-compiler: 
-- gcc
-- clang
+  matrix:
+    include:
+      - compiler: gcc
+        env: TESTMODE=full
+      - compiler: clang
+        env: TESTMODE=minimal
+      - compiler: gcc
+        env: TESTMODE=quick
 before_install:
 - sudo ifconfig
 - pushd ../../ && git clone https://github.com/casadi/testbot.git
@@ -33,9 +38,8 @@ install:
 python: 
 - 2.7_with_system_site_packages
 script: 
-- cd ../test
-- python -c "from casadi.tools import *;loadAllCompiledPlugins()"
-- make unittests_py examples_code_py
+- cd ..
+- /home/travis/build/testbot/testmodes/$TESTMODE.sh
 os: 
 - linux
 - osx
