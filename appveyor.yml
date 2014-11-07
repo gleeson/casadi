@@ -1,5 +1,8 @@
 build_script:
-- mkdir my_build_msys; cd my_build_msys; cmake "-GMSYS Makefiles" ..
+- dir
+- mkdir my_build_msys
+- cd my_build_msys
+- cmake "-GMSYS Makefiles" ..
 - make
 - make install
 - python -c "from casadi.tools import *;loadAllCompiledPlugins()"
