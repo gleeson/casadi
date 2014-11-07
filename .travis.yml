@@ -13,6 +13,8 @@ matrix:
   include:
     - compiler: gcc
       env: TESTMODE=full
+    - compiler: gcc
+      env: TESTMODE=docs
     - compiler: clang
       env: TESTMODE=minimal
     - compiler: gcc
