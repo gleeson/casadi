@@ -33,8 +33,8 @@ install:
 - mkdir build
 - cd build
 - cmake -DWITH_WORHP=ON -DWITH_SLICOT=ON ..
-- bash -c 'if [ "$TESTBUILD" == "ON" ]; then make fi;'
-- bash -c 'if [ "$TESTBUILD" == "ON" ]; then sudo make install fi;'
+- bash -c 'if [ "$TESTBUILD" == "ON" ]; then make; fi;'
+- bash -c 'if [ "$TESTBUILD" == "ON" ]; then sudo make install; fi;'
 python: 
 - 2.7_with_system_site_packages
 script: 
