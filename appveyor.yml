@@ -1,3 +1,9 @@
 build_script:
+- mkdir build_msys; cd build_msys; cmake "-GMSYS Makefiles" ..
+- make
+- make install
+- python -c "from casadi.tools import *;loadAllCompiledPlugins()"
+- cd ../test; make unittests_py examples_code_py; cd ../build
+- cd ..
 - cmake "-GVisual Studio 12 Win64" -H. -B_builds
 - cmake --build _builds --config "Debug"
