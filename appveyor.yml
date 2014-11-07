@@ -1,14 +1,10 @@
+environment:
+ matrix: 
+    - TESTMODE: win_vs
+    - TESTMODE: win_msys
+install:
+  - git clone https://github.com/casadi/testbot.git
+  
 build_script:
 - set PATH=%PATH%;C:\MinGW\msys\1.0\bin;C:\MinGW\bin
-- dir C:
-- dir
-- mkdir my_build_msys
-- cd my_build_msys
-- cmake "-GMSYS Makefiles" ..
-- make
-- make install
-- python -c "from casadi.tools import *;loadAllCompiledPlugins()"
-- cd ../test; make unittests_py examples_code_py; cd ../build
-- cd ..
-- cmake "-GVisual Studio 12 Win64" -H. -B_builds
-- cmake --build _builds --config "Debug"
+- testbot/testmodes/%TESTMODE%.bat
