@@ -12,7 +12,11 @@ env:
 matrix:
   include:
     - compiler: gcc
-      env: TESTMODE=full
+      env: TESTMODE=full_valgrind
+    - compiler: gcc
+      env: TESTMODE=full_remainder
+    - compiler: gcc
+      env: TESTMODE=full_slow
     - compiler: gcc
       env: TESTMODE=docs
     - compiler: clang
