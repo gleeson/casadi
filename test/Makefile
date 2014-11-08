@@ -8,6 +8,8 @@ all: unittests
 # These targets must all go on one line
 trunktesterbot: unittests_py examples_indoc_py examples_indoc_cpp tutorials examples_code_py examples_code_cpp users_guide user_guide_snippets_py lint
 
+trunktesterbot_no_unittests_py: examples_indoc_py examples_indoc_cpp tutorials examples_code_py examples_code_cpp users_guide user_guide_snippets_py lint
+
 trunktesterbot_knownbugs: unittests_py_knownbugs examples_indoc_py examples_indoc_cpp tutorials examples_code_py examples_code_cpp users_guide user_guide_snippets_py
 
 # Set to -memcheck if you want to include a check for memory leaks
@@ -32,6 +34,13 @@ cpp: examples_indoc_cpp  examples_code_cpp
 unittests: unittests_py
 
 unittests_knownbugs: unittests_py_knownbugs
+
+unittests_py_slow:
+	python internal/test_py.py python -skipfiles="alltests.py helpers.py complexity.py speed.py" -passoptions="--ignore_memory_light --run_slow"
+
+unittests_py_valgrind:
+	python internal/test_py.py python -skipfiles="alltests.py helpers.py complexity.py speed.py" $(MEMCHECK) -passoptions="--ignore_memory_heavy --run_slow"
+
 
 unittests_py:
 ifdef MEMCHECK
