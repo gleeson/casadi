@@ -39,7 +39,7 @@ before_install:
 python: 
 - 2.7_with_system_site_packages
 script:
-- /home/travis/build/testbot/testmodes/$TESTMODE.sh
+- travis_wait /home/travis/build/testbot/testmodes/$TESTMODE.sh
 os: 
 - linux
 - osx
