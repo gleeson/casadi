@@ -30,6 +30,7 @@
 #include "casadi/core/sx/sx_tools.hpp"
 #include "casadi/core/function/sx_function.hpp"
 #include "casadi/core/mx/mx_tools.hpp"
+#include <functional>
 
 using namespace std;
 namespace casadi {
