@@ -30,6 +30,7 @@
 #include <fstream>
 #include <cmath>
 #include <cfloat>
+#include <functional>
 
 #ifdef WITH_DL
 #include <cstdlib>
