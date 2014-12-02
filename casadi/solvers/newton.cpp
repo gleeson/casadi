@@ -33,6 +33,7 @@
 #include "casadi/core/casadi_options.hpp"
 
 #include <iomanip>
+#include <functional>
 
 using namespace std;
 namespace casadi {
