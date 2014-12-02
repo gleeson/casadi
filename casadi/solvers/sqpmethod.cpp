@@ -35,6 +35,7 @@
 #include <fstream>
 #include <cmath>
 #include <cfloat>
+#include <functional>
 
 using namespace std;
 namespace casadi {
