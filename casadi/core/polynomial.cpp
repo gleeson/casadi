@@ -26,6 +26,7 @@
 #include "polynomial.hpp"
 #include "std_vector_tools.hpp"
 #include <sstream>
+#include <functional>
 
 using namespace std;
 namespace casadi {
